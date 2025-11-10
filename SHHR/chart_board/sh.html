@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>대시보드</title>
+  
+  <link rel="stylesheet" href="chartStyle.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div class="filtering">
+    <h3>
+      일자 : 
+      <input type="date" value="2023-01-01" id="startData" />
+      <span> ~ </span>
+      <input type="date" value="2023-01-31" id="endData" />
+
+      &nbsp;&nbsp;품목 :
+      <select id="item_select" name="item">
+        <option value="all">전체 품목</option>
+      </select>
+
+      &nbsp;&nbsp;설비 :
+      <select id="machine_select" name="machine">
+        <option value="all">전체 설비</option>
+      </select>
+    </h3>
+  </div>
+
+  <div class="section">
+    <div class="text_box">
+      <h1>총 생산량</h1>
+        <h2 class="text_num" id="totalProdValue"></h2>
+    </div>
+    <div class="text_box">
+      <h1>총 불량수량</h1>
+        <h2 class="text_num" id="totalDefectValue"></h2>
+    </div>
+    <div class="text_box">
+      <h1>불량률</h1>
+        <h2 class="text_num" id="defectRateValue"></h2>
+    </div>
+    <div class="chart_bar">
+      <canvas id="chartB"></canvas>
+    </div>
+  </div>
+
+  <div class="chart_container">
+    <div class="chart_li">
+      <canvas id="chartli"></canvas>
+    </div>
+    <div class="chart_li">
+      <canvas id="chartli2"></canvas>
+    </div>
+  </div>
+
+  <script type="module" src="chart_line.js"></script>
+  <script type="module" src="chart_line2.js"></script>
+  <script type="module" src="chart_bar.js"></script>
+  <script type="module" src="dataInText.js"></script>
+</body>
+</html>
